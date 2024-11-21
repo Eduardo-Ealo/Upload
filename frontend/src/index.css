@@ -1,0 +1,130 @@
+/* Reseteo de estilos (opcional) */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+  /* Contenedor del formulario */
+.project-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f7f9fc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+  /* Títulos y etiquetas */
+.project-form h2 {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+}
+
+.project-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Contenedor principal del proyecto */
+.project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f7f9fc;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Botones con un estilo consistente */
+.project-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.project-btn:hover {
+    background-color: #0056b3;
+}
+
+.project-btn:disabled {
+    background-color: #a0a5ab;
+    cursor: not-allowed;
+}
+
+/* Inputs estilizados */
+.project-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.project-input:focus {
+    border-color: #007bff;
+}
+
+.project-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+  }
+/* Estilos para mensajes de alerta */
+.alert-message {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Tabla personalizada */
+.project-table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.project-table th,
+.project-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.project-table th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.project-table tr:hover {
+    background-color: #f1f1f1;
+}
+
