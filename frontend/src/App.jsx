@@ -46,7 +46,7 @@ const App = () => {
   
     setUploading(true);
   
-    fetch('https://upload-iwbo.onrender.com', {
+    fetch('http://localhost:5000/upload', {
       method: 'POST',
       body: formData,
     })

@@ -24,23 +24,31 @@ const upload = multer({ storage });
 // Ruta para subir archivos (solo guarda metadatos, no el archivo en sí)
 app.post('/upload', upload.single('file'), async (req, res) => {
     try {
+        if (!req.file) {
+            console.log('No se recibió ningún archivo');
+            return res.status(400).json({ error: 'No file received' });
+        }
+
+        console.log('Archivo recibido:', req.file);
+
         const { originalname, mimetype, size } = req.file;
 
-        // Guardar solo los metadatos en MongoDB
         const newFile = new File({
             filename: originalname,
             mimetype,
             size,
-            path: 'not_saved' // O puedes dejarlo vacío o poner null
+            path: 'not_saved'
         });
 
         await newFile.save();
-        res.status(200).json({ message: 'File metadata saved successfully', file: newFile });
+        res.status(200).json({ message: 'File metadata saved', file: newFile });
+
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Error saving file metadata' });
+        console.error('Error en /upload:', error);
+        res.status(500).json({ error: 'Internal server error' });
     }
 });
+
 
 // Ruta para obtener todos los archivos
 app.get('/files', async (req, res) => {
