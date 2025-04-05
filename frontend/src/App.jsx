@@ -46,7 +46,7 @@ const App = () => {
   
     setUploading(true);
   
-    fetch('http://localhost:5000/upload', {
+    fetch('https://backend-62m0.onrender.com/upload', {
       method: 'POST',
       body: formData,
     })
